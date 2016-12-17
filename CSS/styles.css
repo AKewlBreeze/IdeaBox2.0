@@ -11,11 +11,9 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-article {
+form {
   background-color: #E5F3F2;
-  /*height: 300px;*/
   display: flex;
-  /*flex-wrap: wrap;*/
   flex-direction: column;
   justify-content: flex-start;
   align-content: center;
@@ -34,15 +32,15 @@ span {
 }
 
 input {
-  height: 25px;
+  height: 20px;
   width: 80vw;
   font-size: 15px;
   margin: 10px;
-
+  max-width: 330px;
 }
 
 .idea-body {
-  height: 125px;
+  height: 100px;
 }
 
 .save-button {
@@ -51,8 +49,31 @@ input {
   text-decoration: none;
   border: none;
   margin-bottom: 20px;
+  height: 25px;
 }
 
 .save-button:hover {
   background-color: #045E55;
+}
+
+.idea-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+
+.search-input {
+  /*text-decoration: none;*/
+  border-style: groove;
+  margin-top: 20px;
+  height: 25px;
+}
+
+@media screen and (min-width: 650px) {
+  input {
+    width: 50vw;
+    max-width: 460px;
+  }
 }
