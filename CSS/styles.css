@@ -1,0 +1,58 @@
+/*#E5F3F2 BACKGROUND
+#00A79D IDEA-title, SAVE bttn,
+#6D6E71 BOX-title, idea title, quality
+#FFFFFF SAVE-rext
+#045E55 SAVE-hover
+#939598 IDEA body,
+#D1D3D4 Idea divider line*/
+
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+article {
+  background-color: #E5F3F2;
+  /*height: 300px;*/
+  display: flex;
+  /*flex-wrap: wrap;*/
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Roboto Slab", serif;
+  font-size: 40px;
+  color: #00A79D;
+  margin: 20px 5px 10px;
+}
+
+span {
+  color: #6D6E71;
+}
+
+input {
+  height: 25px;
+  width: 80vw;
+  font-size: 15px;
+  margin: 10px;
+
+}
+
+.idea-body {
+  height: 125px;
+}
+
+.save-button {
+  background-color: #00A79D;
+  color: #FFFFFF;
+  text-decoration: none;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.save-button:hover {
+  background-color: #045E55;
+}
