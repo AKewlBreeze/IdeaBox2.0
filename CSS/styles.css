@@ -9,15 +9,23 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-}
-
-form {
-  background-color: #E5F3F2;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-content: center;
   align-items: center;
+  border: solid 2px red;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  background-color: #E5F3F2;
+  align-items: center;
+
 }
 
 h1 {
@@ -69,6 +77,96 @@ input {
   border-style: groove;
   margin-top: 20px;
   height: 25px;
+}
+
+.idea-section{
+  flex-direction: column;
+  display:flex;
+  align-content: center;
+  align-items: center;
+  margin:10px;
+  width: 80vw;
+  max-width: 330px;
+  height: 100vh;
+  border: solid 2px red;
+
+}
+
+.idea-render{
+  font-family: "Roboto Slab", serif;
+  color: #6D6E71;
+  height: 25vh;
+  width: 80vw;
+  max-width: 330px;
+  border:solid 2px red;
+}
+
+.title-render{
+  font-size: 20px;
+  display:inline;
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.button{
+  vertical-align: top;
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  color: transparent;
+  border:none;
+
+}
+
+.delete{
+  background-image: url(../Images/delete.svg);
+  background-repeat:no-repeat;
+  display:inline-block;
+  vertical-align:bottom;
+  /*margin-left: 180px;*/
+  float:right;
+}
+
+.delete:hover{
+  background-image: url(../Images/delete-hover.svg);
+}
+
+.upvote{
+  background-image:url(../Images/upvote.svg);
+}
+
+.upvote:hover{
+  background-image:url(../Images/upvote-hover.svg);
+}
+
+.downvote{
+  background-image:url(../Images/downvote.svg);
+}
+
+.downvote:hover{
+  background-image:url(../Images/downvote-hover.svg);
+}
+
+.editable-body{
+  font-family: "Open Sans", sans-serif;
+  display:block;
+  height: 15vw;
+  width: 80vw;
+  max-width: 300vw;
+  border: dashed black 1px;
+}
+
+.quality-text{
+  align-items: center;
+  align-content: center;
+  font-size: 12px;
+}
+
+
+.vote{
+  vertical-align: top;
+  height: 8%;
+  width: 8%;
 }
 
 @media screen and (min-width: 650px) {
