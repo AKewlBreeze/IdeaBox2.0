@@ -151,8 +151,7 @@ input {
   font-family: "Open Sans", sans-serif;
   display:block;
   height: 15vw;
-  width: 80vw;
-  max-width: 300vw;
+  max-width: 80vw;
   border: dashed black 1px;
 }
 
