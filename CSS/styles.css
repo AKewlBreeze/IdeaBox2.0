@@ -156,16 +156,18 @@ input {
   background-image:url(../Images/downvote-hover.svg);
 }
 
+.editable-body {
+  font-family: "Open Sans", sans-serif;
+  position: absolute;
+  top: 45px;
+}
+
 .quality-text {
   position: absolute;
   left: 65px;
   bottom: 15px;
   width: 50vw;
 }
-
-
-
-
 
 @media screen and (min-width: 650px) {
   input, .editable-body, .idea-render, .idea-section {
