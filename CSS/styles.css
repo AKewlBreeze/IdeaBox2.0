@@ -23,7 +23,6 @@ form {
   align-content: center;
   align-items: center;
   background-color: #E5F3F2;
-  align-items: center;
   width: 100vw;
 
 }
@@ -37,6 +36,10 @@ h1 {
 
 span {
   color: #6D6E71;
+}
+
+.quality-text {
+  font-size: 18px;
 }
 
 input {
@@ -79,10 +82,6 @@ input {
 }
 
 .idea-section {
-  flex-direction: column;
-  display: flex;
-  align-content: center;
-  align-items: center;
   margin: 10px;
   width: 80vw;
   max-width: 330px;
@@ -116,9 +115,7 @@ input {
 .delete {
   background-image: url(../Images/delete.svg);
   background-repeat: no-repeat;
-  display: inline-block;
   vertical-align: bottom;
-  /*margin-left: 180px;*/
   float: right;
 }
 
@@ -149,12 +146,10 @@ input {
   width: 80vw;
   max-width: 330vw;
   margin: 10px 0px;
-  border: dashed black 1px;
+  /*border: dashed black 1px;*/
 }
 
-.quality-text {
-  font-size: 18px;
-}
+
 
 
 @media screen and (min-width: 650px) {
