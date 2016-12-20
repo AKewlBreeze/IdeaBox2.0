@@ -39,7 +39,7 @@ span {
 }
 
 .quality-text {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 input {
@@ -48,6 +48,7 @@ input {
   font-size: 15px;
   margin: 10px;
   max-width: 330px;
+  /*align-items: flex-start;*/
 }
 
 .idea-body {
@@ -81,42 +82,52 @@ input {
   height: 30px;
 }
 
+/*CARD STUFF*/
+
 .idea-section {
-  margin: 10px;
-  width: 80vw;
-  max-width: 330px;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .idea-render {
   font-family: "Roboto Slab", serif;
   color: #6D6E71;
-  height: 25vh;
   width: 80vw;
   max-width: 330px;
+  height: 220px;
+  position: relative;
+  margin: 15px 0px;
+  border-bottom: 1px solid #D1D3D4;
 }
 
 .title-render {
+  position: absolute;
   font-size: 25px;
-  display: inline;
-  width: 100%;
-  vertical-align: bottom;
+  top: 5px;
 }
 
 .button {
-  vertical-align: top;
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   background-color: transparent;
   color: transparent;
   border: none;
 }
 
+.editable-body {
+  font-family: "Open Sans", sans-serif;
+  position: absolute;
+  top: 45px;
+}
+
+
 .delete {
   background-image: url(../Images/delete.svg);
   background-repeat: no-repeat;
-  vertical-align: bottom;
-  float: right;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 
 .delete:hover {
@@ -125,6 +136,9 @@ input {
 
 .upvote {
   background-image:url(../Images/upvote.svg);
+  position: absolute;
+  left: 5px;
+  bottom: 10px;
 }
 
 .upvote:hover {
@@ -133,6 +147,9 @@ input {
 
 .downvote {
   background-image:url(../Images/downvote.svg);
+  position: absolute;
+  left: 35px;
+  bottom: 10px;
 }
 
 .downvote:hover {
@@ -141,10 +158,19 @@ input {
 
 .editable-body {
   font-family: "Open Sans", sans-serif;
+  position: absolute;
+  top: 45px;
+}
 
+.quality-text {
+  position: absolute;
+  left: 65px;
+  bottom: 15px;
+  width: 50vw;
+}
 
 @media screen and (min-width: 650px) {
-  input, editable-body, idea-render, idea-section {
+  input, .editable-body, .idea-render, .idea-section {
     width: 50vw;
     max-width: 460px;
   }
