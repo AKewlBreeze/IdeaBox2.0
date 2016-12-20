@@ -94,6 +94,7 @@ input {
   height: 25vh;
   width: 80vw;
   max-width: 330px;
+  margin: 10px;
 }
 
 .title-render {
@@ -143,7 +144,7 @@ input {
   font-family: "Open Sans", sans-serif;
   display: block;
   height: 20vw;
-  width: 80vw;
+  width: 100px;
   max-width: 330vw;
   margin: 10px 0px;
   /*border: dashed black 1px;*/
