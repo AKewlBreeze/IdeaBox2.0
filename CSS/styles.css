@@ -39,7 +39,7 @@ span {
 }
 
 .quality-text {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 input {
@@ -81,33 +81,50 @@ input {
   height: 30px;
 }
 
+/*CARD STUFF*/
+
 .idea-section {
-  margin: 10px;
-  width: 80vw;
-  max-width: 330px;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
 }
 
 .idea-render {
   font-family: "Roboto Slab", serif;
   color: #6D6E71;
-  height: 25vh;
+  height: 160px;
   width: 80vw;
   max-width: 330px;
+  max-height: 130px;
   margin: 10px;
+  border: 2px solid magenta;
 }
 
 .title-render {
   font-size: 25px;
-  display: inline;
-  width: 100%;
+  /*display: inline;*/
+  width: 90%;
   vertical-align: bottom;
+}
+
+.editable-body {
+  font-family: "Open Sans", sans-serif;
+  /*display: block;*/
+  align-content: flex-start;
+  height: 100px;
+  width: 100px;
+  max-width: 330vw;
+  margin: 10px 0px;
+  /*border: dashed black 1px;*/
 }
 
 .button {
   vertical-align: top;
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   background-color: transparent;
   color: transparent;
   border: none;
@@ -140,21 +157,12 @@ input {
   background-image:url(../Images/downvote-hover.svg);
 }
 
-.editable-body {
-  font-family: "Open Sans", sans-serif;
-  display: block;
-  height: 20vw;
-  width: 100px;
-  max-width: 330vw;
-  margin: 10px 0px;
-  /*border: dashed black 1px;*/
-}
 
 
 
 
 @media screen and (min-width: 650px) {
-  input, editable-body, idea-render, idea-section {
+  input, .editable-body, .idea-render, .idea-section {
     width: 50vw;
     max-width: 460px;
   }
