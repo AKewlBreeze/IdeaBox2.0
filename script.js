@@ -6,7 +6,6 @@ $('.save-button').click(function(event) {
   var $ideaBody = $('.idea-body').val();
   displayIdea($ideaTitle, $ideaBody);
   clearIdeaInputs();
-  var
   });
 
 
