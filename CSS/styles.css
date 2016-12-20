@@ -14,7 +14,6 @@ body {
   justify-content: flex-start;
   align-content: center;
   align-items: center;
-  border: solid 2px red;
 }
 
 form {
@@ -24,7 +23,7 @@ form {
   align-content: center;
   align-items: center;
   background-color: #E5F3F2;
-  align-items: center;
+  width: 100vw;
 
 }
 
@@ -39,8 +38,12 @@ span {
   color: #6D6E71;
 }
 
+.quality-text {
+  font-size: 18px;
+}
+
 input {
-  height: 20px;
+  height: 25px;
   width: 80vw;
   font-size: 15px;
   margin: 10px;
@@ -57,14 +60,14 @@ input {
   text-decoration: none;
   border: none;
   margin-bottom: 20px;
-  height: 25px;
+  height: 30px;
 }
 
 .save-button:hover {
   background-color: #045E55;
 }
 
-.idea-column {
+.idea-search {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -73,104 +76,78 @@ input {
 }
 
 .search-input {
-  /*text-decoration: none;*/
   border-style: groove;
   margin-top: 20px;
-  height: 25px;
+  height: 30px;
 }
 
-.idea-section{
-  flex-direction: column;
-  display:flex;
-  align-content: center;
-  align-items: center;
-  margin:10px;
+.idea-section {
+  margin: 10px;
   width: 80vw;
   max-width: 330px;
   height: 100vh;
-  border: solid 2px red;
-
 }
 
-.idea-render{
+.idea-render {
   font-family: "Roboto Slab", serif;
   color: #6D6E71;
   height: 25vh;
   width: 80vw;
   max-width: 330px;
-  border:solid 2px red;
 }
 
-.title-render{
-  font-size: 20px;
-  display:inline;
+.title-render {
+  font-size: 25px;
+  display: inline;
   width: 100%;
   vertical-align: bottom;
 }
 
-.button{
+.button {
   vertical-align: top;
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
   background-color: transparent;
   color: transparent;
-  border:none;
-
+  border: none;
 }
 
-.delete{
+.delete {
   background-image: url(../Images/delete.svg);
-  background-repeat:no-repeat;
-  display:inline-block;
-  vertical-align:bottom;
-  /*margin-left: 180px;*/
-  float:right;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  float: right;
 }
 
-.delete:hover{
+.delete:hover {
   background-image: url(../Images/delete-hover.svg);
 }
 
-.upvote{
+.upvote {
   background-image:url(../Images/upvote.svg);
 }
 
-.upvote:hover{
+.upvote:hover {
   background-image:url(../Images/upvote-hover.svg);
 }
 
-.downvote{
+.downvote {
   background-image:url(../Images/downvote.svg);
 }
 
-.downvote:hover{
+.downvote:hover {
   background-image:url(../Images/downvote-hover.svg);
 }
 
-.editable-body{
+.editable-body {
   font-family: "Open Sans", sans-serif;
-  display:block;
-  height: 15vw;
-  max-width: 80vw;
-  border: dashed black 1px;
-}
 
-.quality-text{
-  align-items: center;
-  align-content: center;
-  font-size: 12px;
-}
-
-
-.vote{
-  vertical-align: top;
-  height: 8%;
-  width: 8%;
-}
 
 @media screen and (min-width: 650px) {
-  input {
+  input, editable-body, idea-render, idea-section {
     width: 50vw;
     max-width: 460px;
   }
+
+
 }

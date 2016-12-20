@@ -31,7 +31,6 @@ $('.save-button').click(function(event) {
   localStorage.setItem("storedIdeasArray", stringifiedIdeas);
   displayIdea($ideaTitle, $ideaBody);
   clearIdeaInputs();
-  // loadIdeas();
   });
 
 
