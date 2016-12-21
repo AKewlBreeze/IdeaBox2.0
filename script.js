@@ -1,40 +1,48 @@
 var storedIdeasTank = localStorage.getItem("storedIdeasArray");
-var storedIdeas = [];
+var storedIdeas = localStorage.getItem("storedIdeasArray") || [];
 testLoadIdeas();
 
 function testLoadIdeas(){
   if(storedIdeasTank === null ){
-    console.log("nope");
   } else {
-    console.log('yep');
     loadIdeas();
   }
 }
 
 
 function loadIdeas(){
+
   var parsedObject = JSON.parse(storedIdeasTank);
   for(var ideasCount = 0; ideasCount < parsedObject.length; ideasCount++){
+
     var cardObject = (parsedObject[ideasCount]);
-    console.log(cardObject);
-    displayIdea(cardObject.title, cardObject.content);
+    displayIdea(cardObject.title, cardObject.content, cardObject.id);
   }
 }
 
 $('.save-button').click(function(event) {
   event.preventDefault();
+  var id = Date.now();
   var $ideaTitle = $('.idea-title').val();
   var $ideaBody = $('.idea-body').val();
-  var userIdeas = {title: $ideaTitle, content: $ideaBody};
+  var userIdeas = {title: $ideaTitle, content: $ideaBody, id: id};
   storedIdeas.push(userIdeas);
   var stringifiedIdeas= JSON.stringify(storedIdeas);
   localStorage.setItem("storedIdeasArray", stringifiedIdeas);
-  displayIdea($ideaTitle, $ideaBody);
+  displayIdea($ideaTitle, $ideaBody, id);
   clearIdeaInputs();
   });
 
-function displayIdea ($ideaTitle, $ideaBody) {
-  $('.idea-section').prepend(`<div class ="idea-render">
+// <div id="an-ID" class="some-descriptor"></div>
+// <div id="an-ID2" class="some-descriptor"></div>
+// $(".some-descriptor") // all elements with this class
+// $("#an-ID") // element with the id="an-ID"
+
+// const myName = () => 'Tae';
+// const introduction = `Hello World, ${myName()} am here.`
+function displayIdea ($ideaTitle, $ideaBody, id) {
+
+  $('.idea-section').prepend(`<div class ="idea-render" id="${id}" >
     <h2 class ="title-render" contenteditable="true">${$ideaTitle}</h2>
     <button class="button delete">delete</button>
     <p class = "editable-body" contenteditable="true" >${$ideaBody}</p>
@@ -44,14 +52,34 @@ function displayIdea ($ideaTitle, $ideaBody) {
   </div>`);
 }
 
+
 function clearIdeaInputs() {
   $('.idea-title').val('');
   $('.idea-body').val('');
 }
 
+
 $('.idea-section').on('click', '.delete', function() {
+  var id = $(this).parents('.idea-render').attr('id');
+  deleteFromStorage(id);
   $(this).closest('.idea-render').remove();
 });
+
+// find a path to pass in the id or perhaps set as a global variable
+
+function deleteFromStorage(id){
+  // console.log("storedIdeasArray");
+  // localStorage.removeItem('storedIdeasArray');
+  console.log(storedIdeas);
+  // storedIdeas.forEach(function(idea){
+  //   console.log(idea);
+  // });
+   for (var ideasCount = 0; ideasCount < storedIdeas.length;  ideasCount++){
+     console.log("help");
+     storedIdeas.splice(ideasCount, 1);
+    }
+  }
+// if (id == storedIdeas[ideasCount].id)
 
 $('.idea-section').on('click', '.upvote', function() {
   if ($('.quality-text').html() === 'quality: swill') {
