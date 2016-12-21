@@ -1,10 +1,19 @@
-var storedIdeas = []
+var storedIdeasTank = localStorage.getItem("storedIdeasArray");
+var storedIdeas = [];
+testLoadIdeas();
 
-$(document).ready(loadIdeas());
+function testLoadIdeas(){
+  if(storedIdeasTank === null ){
+    console.log("nope");
+  } else {
+    console.log('yep');
+    loadIdeas();
+  }
+}
+
 
 function loadIdeas(){
-  var storedIdeas = localStorage.getItem("storedIdeasArray");
-  var parsedObject = JSON.parse(storedIdeas);
+  var parsedObject = JSON.parse(storedIdeasTank);
   for(var ideasCount = 0; ideasCount < parsedObject.length; ideasCount++){
     var cardObject = (parsedObject[ideasCount]);
     console.log(cardObject);
@@ -12,20 +21,11 @@ function loadIdeas(){
   }
 }
 
-// 1. get title, body and quality from storage
-    // - grab content associated with desired key
-    // - parse string
-    // - loop through array
-    // - append results
-// 2. set retrieved content in card section
-
 $('.save-button').click(function(event) {
   event.preventDefault();
   var $ideaTitle = $('.idea-title').val();
   var $ideaBody = $('.idea-body').val();
   var userIdeas = {title: $ideaTitle, content: $ideaBody};
-  localStorage.setItem("storedIdeasArray",storedIdeas);
-  localStorage.getItem("storedIdeasArray");
   storedIdeas.push(userIdeas);
   var stringifiedIdeas= JSON.stringify(storedIdeas);
   localStorage.setItem("storedIdeasArray", stringifiedIdeas);
