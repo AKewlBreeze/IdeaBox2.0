@@ -1,5 +1,7 @@
 //Will this break at some point? vs document.ready
-retrieveIdea();
+$(document).ready(function() {
+  retrieveIdea();
+})
 
 
 function createIdea (title, body, id, quality) {
@@ -46,6 +48,12 @@ function renderCard(parsed) {
   </div>`
   )
 }
+
+$('.idea-section').on('click', '.delete', function() {
+  var targetID = $(this).closest('.idea-render').attr('id');
+  
+  console.log(targetIdea);
+})
 
 //this.parent.attr(id)  // send the ideaToStore to local storage
   // set the ideaToStore.id as the key in localStorage
