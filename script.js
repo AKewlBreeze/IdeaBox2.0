@@ -1,8 +1,6 @@
-//Will this break at some point? vs document.ready
 $(document).ready(function() {
   retrieveIdea();
 })
-
 
 function createIdea (title, body, id, quality) {
   this.title = title;
@@ -20,7 +18,6 @@ $('.save-button').on('click', function(event) {
    retrieveIdea();
 })
 
-
 function storeIdea(ideaToStore) {
   var ideaID = ideaToStore.id;
   var stringIdea = JSON.stringify(ideaToStore);
@@ -31,7 +28,6 @@ function retrieveIdea() {
   $('.idea-render').remove();
   for(var key in localStorage) {
     var parsedIdea =JSON.parse(localStorage[key]);
-    console.log(parsedIdea);
     renderCard(parsedIdea);
   }
 }
@@ -51,8 +47,8 @@ function renderCard(parsed) {
 
 $('.idea-section').on('click', '.delete', function() {
   var targetID = $(this).closest('.idea-render').attr('id');
-  
-  console.log(targetIdea);
+  localStorage.removeItem(targetID);
+  retrieveIdea();
 })
 
 //this.parent.attr(id)  // send the ideaToStore to local storage
