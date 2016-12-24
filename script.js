@@ -16,7 +16,15 @@ $('.save-button').on('click', function(event) {
   var ideaToStore = new createIdea($ideaTitle, $ideaBody);
   storeIdea(ideaToStore);
   retrieveIdea();
+  clearInputs();
 })
+
+function clearInputs() {
+  $('.idea-title').val('');
+  $('.idea-body').val('');
+}
+
+
 
 function storeIdea(ideaToStore) {
   var ideaID = ideaToStore.id;
@@ -77,6 +85,8 @@ $('.idea-section').on('click', '.downvote', function() {
   localStorage.setItem(targetID, upVotedIdea);
   retrieveIdea();
 })
+
+
 
 
 //this.parent.attr(id)  // send the ideaToStore to local storage
