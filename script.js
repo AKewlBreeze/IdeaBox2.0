@@ -13,9 +13,9 @@ $('.save-button').on('click', function(event) {
   event.preventDefault();
   var $ideaTitle = $('.idea-title').val();
   var $ideaBody = $('.idea-body').val();
-   var ideaToStore = new createIdea($ideaTitle, $ideaBody);
-   storeIdea(ideaToStore);
-   retrieveIdea();
+  var ideaToStore = new createIdea($ideaTitle, $ideaBody);
+  storeIdea(ideaToStore);
+  retrieveIdea();
 })
 
 function storeIdea(ideaToStore) {
@@ -27,7 +27,7 @@ function storeIdea(ideaToStore) {
 function retrieveIdea() {
   $('.idea-render').remove();
   for(var key in localStorage) {
-    var parsedIdea =JSON.parse(localStorage[key]);
+    var parsedIdea = JSON.parse(localStorage[key]);
     renderCard(parsedIdea);
   }
 }
@@ -50,6 +50,34 @@ $('.idea-section').on('click', '.delete', function() {
   localStorage.removeItem(targetID);
   retrieveIdea();
 })
+
+
+$('.idea-section').on('click', '.upvote', function() {
+  var targetID = $(this).closest('.idea-render').attr('id');
+  var targetIdea = JSON.parse(localStorage.getItem(targetID));
+  if (targetIdea.quality === 'swill'){
+    targetIdea.quality = 'plausible';
+  } else if (targetIdea.quality === 'plausible'){
+    targetIdea.quality = 'genius';
+  }
+  var upVotedIdea = JSON.stringify(targetIdea);
+  localStorage.setItem(targetID, upVotedIdea);
+  retrieveIdea();
+})
+
+$('.idea-section').on('click', '.downvote', function() {
+  var targetID = $(this).closest('.idea-render').attr('id');
+  var targetIdea = JSON.parse(localStorage.getItem(targetID));
+  if (targetIdea.quality === 'genius'){
+    targetIdea.quality = 'plausible';
+  } else if (targetIdea.quality === 'plausible'){
+    targetIdea.quality = 'swill';
+  }
+  var upVotedIdea = JSON.stringify(targetIdea);
+  localStorage.setItem(targetID, upVotedIdea);
+  retrieveIdea();
+})
+
 
 //this.parent.attr(id)  // send the ideaToStore to local storage
   // set the ideaToStore.id as the key in localStorage
