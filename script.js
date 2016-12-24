@@ -1,6 +1,53 @@
 $(document).ready(function() {
   retrieveIdea();
-})
+});
+
+
+jQuery(document).ready(function($){
+
+$('.idea-section').each(function(){
+$(this).attr('data-search-term', $(this).text().toLowerCase());
+});
+
+$('.search-input').on('keyup', function(){
+console.log("yelp");
+var searchTerm = $(this).val().toLowerCase();
+
+    $('.idea-section').each(function(){
+
+        if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+
+    });
+
+});
+
+});
+
+
+// $(document).ready(function() {
+//     $('.search-input').keyup(function() {
+//       console.log("yelp");
+//         var filter = $(this).val(),
+//             count = 0;
+//         $('.idea-section').each(function() {
+//             if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+//                 $(this).hide();
+//             } else {
+//                 $(this).show();
+//                 count++;
+//             }
+//         });
+//     });
+// });
+
+
+
+
+
 
 function createIdea (title, body, id, quality) {
   this.title = title;
