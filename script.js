@@ -87,7 +87,7 @@ $('.idea-section').on('click', '.downvote', function() {
 $('.idea-section').on('focusout', '.title-render', function(){
   var $targetID =  $(this).closest('.idea-render').attr('id');
   var targetIdea = JSON.parse(localStorage.getItem($targetID));
-  var $newTitle = $('.title-render').html();
+  var $newTitle = $(this).closest('.title-render').html();
   targetIdea.title = $newTitle;
   var titleToStore = JSON.stringify(targetIdea);
   localStorage.setItem($targetID, titleToStore);
@@ -98,13 +98,11 @@ $('.idea-section').on('focusout', '.title-render', function(){
 $('.idea-section').on('focusout', '.editable-body', function() {
   var $targetID =  $(this).closest('.idea-render').attr('id');
   var targetIdea = JSON.parse(localStorage.getItem($targetID));
-  var $newBody = $('.editable-body').html();
-  console.log($newBody);
+  var $newBody = $(this).closest('.editable-body').html();
   targetIdea.body = $newBody;
   var bodyToStore = JSON.stringify(targetIdea);
   localStorage.setItem($targetID, bodyToStore);
   retrieveIdea();
-  console.log(localStorage);
 })
 
 
