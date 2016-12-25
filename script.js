@@ -57,7 +57,6 @@ $('.idea-section').on('click', '.delete', function() {
   retrieveIdea();
 })
 
-
 $('.idea-section').on('click', '.upvote', function() {
   var $targetID = $(this).closest('.idea-render').attr('id');
   var targetIdea = JSON.parse(localStorage.getItem($targetID));
@@ -111,22 +110,3 @@ $('.idea-section').on('focusout', '.editable-body', function() {
   // {ideaToStore.id: {title: ideaToStore.title, body: ideaToStore.body, quality:
   // ideaToStore.quality}}
   //array of ids to pull from local storage???
-
-
-
-
-
-
-
-
-
-
-// $(submitButton).click(function() {
-//   -stringify createIdea;
-//   -send createIdea to storage;
-//   -run renderCard function(createIdea);
-// })
-//
-// function renderCard(){
-//   add object properties to html stuff and prepend to DOM element;
-// }
