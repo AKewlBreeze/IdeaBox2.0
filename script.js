@@ -26,7 +26,7 @@ var searchTerm = $(this).val().toLowerCase();
 });
 
 });
-
+  
 
 // $(document).ready(function() {
 //     $('.search-input').keyup(function() {
