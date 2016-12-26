@@ -3,48 +3,20 @@ $(document).ready(function() {
 });
 
 
-jQuery(document).ready(function($){
-
-$('.live-search-list li').each(function(){
-$(this).attr('data-search-term', $(this).text().toLowerCase());
+$(".search-input").on("keyup", function(){
+  var ideaCards = $(".idea-render");
+    // returns the array to loop over
+  var userSearchValue = $(this).val().toLowerCase();
+  for (var cardCount = 0; cardCount < ideaCards.length; cardCount ++){
+    var ideaCardText = $(ideaCards[cardCount]).text().toLowerCase();
+    var matched = ideaCardText.indexOf(userSearchValue) !== -1;
+    // w/out ! == -1 indexOf returns a a numeric value (index) of where the user inputed valued is located. By adding !==-1 the indexOf now returns a boolean indicating what is searched for is present (true) or not present (false)
+    $(ideaCards[cardCount]).toggle(matched);
+    // toggle will then display the items that returns a true boolean
+    // ideaCards at that given index (cardCount) that return true (mathed) will toggle therefore the matched items will be shown
+    console.log(matched);
+  }
 });
-
-$('.live-search-box').on('keyup', function(){
-
-var searchTerm = $(this).val().toLowerCase();
-
-    $('.live-search-list li').each(function(){
-
-        if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
-            $(this).show();
-        } else {
-            $(this).hide();
-        }
-
-    });
-
-});
-
-});
-
-
-// $(document).ready(function() {
-//     $('.search-input').keyup(function() {
-//       console.log("yelp");
-//         var filter = $(this).val(),
-//             count = 0;
-//         $('.idea-section').each(function() {
-//             if ($(this).text().search(new RegExp(filter, "i")) < 0) {
-//                 $(this).hide();
-//             } else {
-//                 $(this).show();
-//                 count++;
-//             }
-//         });
-//     });
-// });
-
-
 
 
 
