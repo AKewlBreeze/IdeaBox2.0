@@ -6,6 +6,7 @@
 #939598 IDEA body,
 #D1D3D4 Idea divider line*/
 
+/*Base Styles*/
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -24,22 +25,10 @@ form {
   align-items: center;
   background-color: #E5F3F2;
   width: 100vw;
-
 }
 
-h1 {
-  font-family: "Roboto Slab", serif;
-  font-size: 40px;
-  color: #00A79D;
-  margin: 20px 5px 10px;
-}
-
-span {
-  color: #6D6E71;
-}
-
-.quality-text {
-  font-size: 15px;
+.idea-body {
+  height: 100px;
 }
 
 input {
@@ -48,26 +37,78 @@ input {
   font-size: 15px;
   margin: 10px;
   max-width: 330px;
-  /*align-items: flex-start;*/
-}
-
-.idea-body {
-  height: 100px;
 }
 
 .save-button {
-  background-color: #00A79D;
-  color: #FFFFFF;
-  text-decoration: none;
-  border: none;
-  margin-bottom: 20px;
   height: 30px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: #00A79D;
+  border: none;
 }
 
-.save-button:hover {
-  background-color: #045E55;
+/*Card Layout*/
+
+.button {
+  height: 25px;
+  width: 25px;
+  color: transparent;
+  background-color: transparent;
+  border: none;
 }
 
+.delete {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-image: url(../Images/delete.svg);
+  background-repeat: no-repeat;
+}
+
+.downvote {
+  position: absolute;
+  height:22px;
+  width:22px;
+  left: 35px;
+  bottom: 10px;
+  background-image:url(../Images/downvote.svg);
+}
+
+.editable-body {
+  position: absolute;
+  top: 45px;
+  margin: 18px 0px; 
+  font-family: "Open Sans", sans-serif;
+}
+
+.delete {
+  background-image: url(../Images/delete.svg);
+  background-repeat: no-repeat;
+}
+
+.idea-render {
+  position: relative;
+  height: 135px;
+  width: 80vw;
+  max-width: 330px;
+  margin: 15px 0px;
+  color: #6D6E71;
+  font-family: "Roboto Slab", serif;
+  border-bottom: 1px solid #D1D3D4;
+  padding-bottom: 15px;
+}
+
+.upvote {
+  position: absolute;
+  height:22px;
+  width:22px;
+  left: 5px;
+  bottom: 10px;
+  background-image:url(../Images/upvote.svg);
+
+/*Card Render Section*/
+  
 .idea-search {
   display: flex;
   flex-direction: column;
@@ -76,83 +117,68 @@ input {
   align-items: center;
 }
 
-.search-input {
-  border-style: groove;
-  margin-top: 20px;
-  height: 30px;
-}
-
-/*CARD STUFF*/
-
 .idea-section {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
-.idea-render {
-  font-family: "Roboto Slab", serif;
-  color: #6D6E71;
-  width: 80vw;
-  max-width: 330px;
-  margin: 15px 0px;
-  border-bottom: 1px solid #D1D3D4;
-  padding-bottom: 15px;
-}
-
 .title-render {
+  position: absolute;
   font-size: 25px;
-}
-
-.button {
-  height: 25px;
-  width: 25px;
-  background-color: transparent;
-  color: transparent;
-  border: none;
-}
-
-.editable-body {
-  font-family: "Open Sans", sans-serif;
-  margin: 18px 0px;
-}
-
+  top: 5px;
+  }
+  
 .id-wrapper {
   display: flex;
   justify-content: space-between;
 }
 
-.delete {
-  background-image: url(../Images/delete.svg);
-  background-repeat: no-repeat;
+.search-input {
+  height: 30px;
+  margin-top: 20px;
+  border-style: groove;
 }
+
+/*Theme Styles*/
+
+h1 {
+  margin: 20px 5px 10px;
+  font-size: 40px;
+  font-family: "Roboto Slab", serif;
+  color: #00A79D;
+}
+
+span {
+  color: #6D6E71;
+}
+  
+.quality-text {
+  position: absolute;
+  left: 65px;
+  width: 50vw;
+  bottom: 15px;
+  font-family: "Open Sans", sans-serif;
+  color:#6D6E71;
+}
+
+/*State Changes*/
 
 .delete:hover {
   background-image: url(../Images/delete-hover.svg);
 }
 
-.upvote {
-  background-image:url(../Images/upvote.svg);
+.downvote:hover {
+  background-image:url(../Images/downvote-hover.svg);
+}
+  
+.save-button:hover {
+  background-color: #045E55;
 }
 
 .upvote:hover {
   background-image:url(../Images/upvote-hover.svg);
-}
-
-.downvote {
-  background-image:url(../Images/downvote.svg);
-}
-
-.downvote:hover {
-  background-image:url(../Images/downvote-hover.svg);
-}
-
-.editable-body {
   font-family: "Open Sans", sans-serif;
-}
-
-.quality-text {
-  width: 50vw;
 }
 
 @media screen and (min-width: 650px) {
@@ -161,5 +187,7 @@ input {
     max-width: 460px;
   }
 
-
+  .idea-body {
+    height: 25px;
+  }
 }
