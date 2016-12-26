@@ -41,12 +41,16 @@ function retrieveIdea() {
 function renderCard(parsed) {
   $('.idea-section').prepend(`
     <div id=${parsed.id} class ="idea-render">
-    <h2 class ="title-render" contenteditable="true">${parsed.title}</h2>
-    <button class="button delete">delete</button>
+    <div class="id-wrapper">
+      <h2 class ="title-render" contenteditable="true">${parsed.title}</h2>
+      <button class="button delete">delete</button>
+    </div>
     <p class="editable-body" contenteditable="true">${parsed.body}</p>
-    <button class = "button upvote"></button>
-    <button class = "button downvote"></button>
-    <span class="quality-text">quality: ${parsed.quality}</span>
+    <div id="button-wrapper">
+      <button class = "button upvote"></button>
+      <button class = "button downvote"></button>
+      <span class="quality-text">quality: ${parsed.quality}</span>
+    </div>
   </div>`
   )
 }
