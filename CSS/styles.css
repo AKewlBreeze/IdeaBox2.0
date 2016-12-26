@@ -78,7 +78,13 @@ input {
 .editable-body {
   position: absolute;
   top: 45px;
+  margin: 18px 0px; 
   font-family: "Open Sans", sans-serif;
+}
+
+.delete {
+  background-image: url(../Images/delete.svg);
+  background-repeat: no-repeat;
 }
 
 .idea-render {
@@ -90,6 +96,7 @@ input {
   color: #6D6E71;
   font-family: "Roboto Slab", serif;
   border-bottom: 1px solid #D1D3D4;
+  padding-bottom: 15px;
 }
 
 .upvote {
@@ -99,10 +106,9 @@ input {
   left: 5px;
   bottom: 10px;
   background-image:url(../Images/upvote.svg);
-}
 
 /*Card Render Section*/
-
+  
 .idea-search {
   display: flex;
   flex-direction: column;
@@ -121,6 +127,11 @@ input {
   position: absolute;
   font-size: 25px;
   top: 5px;
+  }
+  
+.id-wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 .search-input {
@@ -141,13 +152,13 @@ h1 {
 span {
   color: #6D6E71;
 }
-
+  
 .quality-text {
   position: absolute;
   left: 65px;
   width: 50vw;
   bottom: 15px;
-   font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color:#6D6E71;
 }
 
@@ -160,19 +171,14 @@ span {
 .downvote:hover {
   background-image:url(../Images/downvote-hover.svg);
 }
-
-.editable-body {
-  position: absolute;
-  top: 45px;
-  font-family: "Open Sans", sans-serif;
-}
-
+  
 .save-button:hover {
   background-color: #045E55;
 }
 
 .upvote:hover {
   background-image:url(../Images/upvote-hover.svg);
+  font-family: "Open Sans", sans-serif;
 }
 
 @media screen and (min-width: 650px) {
