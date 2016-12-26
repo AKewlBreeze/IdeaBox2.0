@@ -95,16 +95,13 @@ input {
   color: #6D6E71;
   width: 80vw;
   max-width: 330px;
-  height: 135px;
-  position: relative;
   margin: 15px 0px;
   border-bottom: 1px solid #D1D3D4;
+  padding-bottom: 15px;
 }
 
 .title-render {
-  position: absolute;
   font-size: 25px;
-  top: 5px;
 }
 
 .button {
@@ -117,17 +114,17 @@ input {
 
 .editable-body {
   font-family: "Open Sans", sans-serif;
-  position: absolute;
-  top: 45px;
+  margin: 18px 0px;
 }
 
+.id-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
 
 .delete {
   background-image: url(../Images/delete.svg);
   background-repeat: no-repeat;
-  position: absolute;
-  top: 5px;
-  right: 5px;
 }
 
 .delete:hover {
@@ -136,9 +133,6 @@ input {
 
 .upvote {
   background-image:url(../Images/upvote.svg);
-  position: absolute;
-  left: 5px;
-  bottom: 10px;
 }
 
 .upvote:hover {
@@ -147,9 +141,6 @@ input {
 
 .downvote {
   background-image:url(../Images/downvote.svg);
-  position: absolute;
-  left: 35px;
-  bottom: 10px;
 }
 
 .downvote:hover {
@@ -158,14 +149,9 @@ input {
 
 .editable-body {
   font-family: "Open Sans", sans-serif;
-  position: absolute;
-  top: 45px;
 }
 
 .quality-text {
-  position: absolute;
-  left: 65px;
-  bottom: 15px;
   width: 50vw;
 }
 
