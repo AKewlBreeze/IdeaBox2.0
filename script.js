@@ -5,15 +5,15 @@ $(document).ready(function() {
 
 jQuery(document).ready(function($){
 
-$('.idea-section').each(function(){
+$('.live-search-list li').each(function(){
 $(this).attr('data-search-term', $(this).text().toLowerCase());
 });
 
-$('.search-input').on('keyup', function(){
-console.log("yelp");
+$('.live-search-box').on('keyup', function(){
+
 var searchTerm = $(this).val().toLowerCase();
 
-    $('.idea-section').each(function(){
+    $('.live-search-list li').each(function(){
 
         if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
             $(this).show();
@@ -26,7 +26,7 @@ var searchTerm = $(this).val().toLowerCase();
 });
 
 });
-  
+
 
 // $(document).ready(function() {
 //     $('.search-input').keyup(function() {
