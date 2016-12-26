@@ -6,9 +6,9 @@
 #939598 IDEA body,
 #D1D3D4 Idea divider line*/
 
+/*BASE STYLES*/
 
 body {
-  font-family: "Open Sans", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -24,31 +24,14 @@ form {
   align-items: center;
   background-color: #E5F3F2;
   width: 100vw;
-
-}
-
-h1 {
-  font-family: "Roboto Slab", serif;
-  font-size: 40px;
-  color: #00A79D;
-  margin: 20px 5px 10px;
-}
-
-span {
-  color: #6D6E71;
-}
-
-.quality-text {
-  font-size: 15px;
 }
 
 input {
   height: 25px;
+  margin: 10px;
   width: 80vw;
   font-size: 15px;
-  margin: 10px;
   max-width: 330px;
-  /*align-items: flex-start;*/
 }
 
 .idea-body {
@@ -56,17 +39,56 @@ input {
 }
 
 .save-button {
-  background-color: #00A79D;
+  height: 30px;
+  margin-bottom: 20px;
   color: #FFFFFF;
+  background-color: #00A79D;
   text-decoration: none;
   border: none;
-  margin-bottom: 20px;
-  height: 30px;
 }
 
-.save-button:hover {
-  background-color: #045E55;
+.search-input {
+  height: 30px;
+  margin-top: 20px;
+  border-style: groove;
 }
+
+/*CARD LAYOUT*/
+
+.delete {
+  background-image: url(../Images/delete.svg);
+  background-repeat: no-repeat;
+}
+
+.downvote {
+  background-image:url(../Images/downvote.svg);
+}
+
+.editable-body {
+  margin: 18px 0px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.idea-render {
+  margin: 15px 0px;
+  padding-bottom: 15px;
+  width: 80vw;
+  max-width: 330px;
+  color: #6D6E71;
+  border-bottom: 1px solid #D1D3D4;
+  font-family: "Roboto Slab", serif;
+}
+
+.id-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.upvote {
+  background-image:url(../Images/upvote.svg);
+}
+
+/*CARD RENDER SECTION*/
 
 .idea-search {
   display: flex;
@@ -76,84 +98,61 @@ input {
   align-items: center;
 }
 
-.search-input {
-  border-style: groove;
-  margin-top: 20px;
-  height: 30px;
-}
-
-/*CARD STUFF*/
-
 .idea-section {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
-.idea-render {
-  font-family: "Roboto Slab", serif;
-  color: #6D6E71;
-  width: 80vw;
-  max-width: 330px;
-  margin: 15px 0px;
-  border-bottom: 1px solid #D1D3D4;
-  padding-bottom: 15px;
-}
-
 .title-render {
   font-size: 25px;
 }
 
+/*THEME STYLES*/
+
 .button {
-  height: 25px;
-  width: 25px;
+  height: 19px;
+  width: 19px;
   background-color: transparent;
   color: transparent;
   border: none;
 }
 
-.editable-body {
+h1 {
+  margin: 20px 5px 10px;
+  color: #00A79D;
+  font-size: 40px;
+  font-family: "Roboto Slab", serif;
+}
+
+.quality-text {
+  font-size: 15px;
+  width: 50vw;
   font-family: "Open Sans", sans-serif;
-  margin: 18px 0px;
 }
 
-.id-wrapper {
-  display: flex;
-  justify-content: space-between;
+span {
+  color: #6D6E71;
 }
 
-.delete {
-  background-image: url(../Images/delete.svg);
-  background-repeat: no-repeat;
-}
+/*STATE CHANGES*/
 
 .delete:hover {
   background-image: url(../Images/delete-hover.svg);
-}
-
-.upvote {
-  background-image:url(../Images/upvote.svg);
-}
-
-.upvote:hover {
-  background-image:url(../Images/upvote-hover.svg);
-}
-
-.downvote {
-  background-image:url(../Images/downvote.svg);
 }
 
 .downvote:hover {
   background-image:url(../Images/downvote-hover.svg);
 }
 
-.editable-body {
-  font-family: "Open Sans", sans-serif;
+.save-button:hover {
+  background-color: #045E55;
 }
 
-.quality-text {
-  width: 50vw;
+.upvote:hover {
+  background-image:url(../Images/upvote-hover.svg);
 }
+
 
 @media screen and (min-width: 650px) {
   input, .editable-body, .idea-render, .idea-section {
@@ -161,5 +160,8 @@ input {
     max-width: 460px;
   }
 
+  .idea-body {
+    height: 25px;
+  }
 
 }
