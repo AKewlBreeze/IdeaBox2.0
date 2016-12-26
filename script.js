@@ -83,7 +83,7 @@ $('.idea-section').on('click', '.upvote', function() {
 
 $('.idea-section').on('click', '.downvote', function() {
   var $targetID = $(this).closest('.idea-render').attr('id');
-  var targetIdea = JSON.parse(localStorage.getItem(target$ID));
+  var targetIdea = JSON.parse(localStorage.getItem($targetID));
   if (targetIdea.quality === 'genius'){
     targetIdea.quality = 'plausible';
   } else if (targetIdea.quality === 'plausible'){
@@ -102,7 +102,6 @@ $('.idea-section').on('focusout', '.title-render', function(){
   var titleToStore = JSON.stringify(targetIdea);
   localStorage.setItem($targetID, titleToStore);
   retrieveIdea();
-
 });
 
 $('.idea-section').on('focusout', '.editable-body', function() {
